@@ -5,6 +5,8 @@ from flask import url_for
 from pymongo import MongoClient
 import pprint
 
+app = flask.Flask(__name__)
+
 client = MongoClient('mongodb://138.197.205.128:27017/')
 
 db = client.whitebird
@@ -12,16 +14,6 @@ db = client.whitebird
 orgs = db.organizations
 
 pprint.pprint(orgs.find_one())
-
-@app.route("/")
-@app.route("/search", methods=['POST'])
-
-#Check to see if null, if not don't include them
-category1 = flask.request.form.get("category1")
-category2 = flask.request.form.get("category2")
-state = flask.request.form.get("state")
-city = flask.request.form.get("city")
-company = flask.request.form.get("company")
 
 #Testing Suite
 """
@@ -31,6 +23,8 @@ state = None
 city = "howdy"
 company = "yes"
 """
+
+# set the project root directory as the static folder, you can set others.
 
 class CreateDictionary:
 
@@ -70,17 +64,28 @@ print(createdict)
 test = createdict.get_dictionary()
 print(test)
 """
-
+@app.route("/")
+@app.route("/search", methods=['POST'])
 def search():
 	"""
 	The default page which is a search page that allows the client to send various amounts of information 
 	to the server in order to check whether or not the requested resource is in the database. Redirects to
 	the results page with the specified parameters.
 	"""
-	category1 = flask.request.form.get("category1")
-	category2 = flask.request.form.get("category2")
-	state = flask.request.form.get("state")
-	city = flask.request.form.get("city")
-	company = flask.request.form.get("company")
-	diction = new CreateDictionary(category1, category2, state, city, company)
+	category1 = flask.request.form.get("formInputCategory1")
+	category2 = flask.request.form.get("formInputCategory2")
+	state = flask.request.form.get("formInputState")
+	city = flask.request.form.get("formInputCity")
+	company = flask.request.form.get("formInputCompany")
+	diction = CreateDictionary(category1, category2, state, city, company)
+	orgs_list = []
+	if diction.found == 0:
+		flask.g.found = 0
+		for i in orgs.find():
+			orgs_list.append(i)
+		flask.g.orgs_list = orgs_list
+		return flask.render_template("index.html")
+	for i in orgs.find(diction.get_dictionary):
+		orgs_list.append(i)
+	flask.g.orgs_list = orgs_list
 	return flask.render_template("index.html")
