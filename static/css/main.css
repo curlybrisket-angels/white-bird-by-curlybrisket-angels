@@ -30,6 +30,7 @@ h2 {
 }
 
 #searchForm {
+    margin: 0px 170px 0px 170px;
     margin-top: 15px;
     display: block;
 
@@ -77,13 +78,15 @@ h4 {
 .resultTable {
     background-color: cadetblue;
 }
+
+th {
+    width: 140px;
+}
  
 .searchResultsNav {
     margin: 20px 0px 0px 0px;
     padding-bottom: 100px;
-    background-color: aqua;
     text-align: center;
-    align-content: center;
 }
 
 .logo-image {

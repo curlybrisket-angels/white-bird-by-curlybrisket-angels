@@ -12,7 +12,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
         <!--Custom css-->
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" media="screen">
+        <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/main.css') }}" media="screen">
         <link rel="stylesheet" href="../static/css/main.css" media="screen">
 
         <!--Custom javascript-->
@@ -28,17 +28,6 @@
         </div>
 
         <form method="POST" action="/_startup" id="searchForm">
-          <div class="form-group">
-            <label for="formInputState">State</label>
-            <select class="form-control" id="formInputState">
-              <option>N/A</option>
-              <option>Oregon</option>
-              <option>Washington</option>
-              <option>California</option>
-              <option>Idaho</option>
-              <option>Montana</option>
-            </select>
-          </div>
           <div class="form-group">
             <label for="formInputCity">City</label>
             <select class="form-control" id="formInputCity">
@@ -122,16 +111,9 @@
             <label for="formInputCompany">Company</label>
             <input type="text" class="form-control" id="formInputCompany" placeholder="ex: womens shelter">
           </div>
+            
+          <button id="searchButton" type="button" class="btn btn-primary btn-lg" onClick="document.getElementById('searchResults').scrollIntoView();">Search</button>  
         </form>
-
-        <button id="searchButton" type="button" class="btn btn-primary btn-lg" onClick="document.getElementById('searchResults').scrollIntoView();">Search</button>
-<!--
-        <div id="demo">
-
-        <h2>Let AJAX change this text</h2>
-            <button type="button" onclick="loadDoc()">submit search</button>
-        </div>
--->
 
         <div id="searchResults">
             <h1>Results</h1>
@@ -141,16 +123,24 @@
                 <table class="table table-sm table-light">
                   <tbody class="resultTable">
                     <tr>
-                      <th scope="row">Status:</th>
+                      <th scope="row" class="SearchModuleMainCol">Status:</th>
                       <td>Inactive</td>
                     </tr>
                     <tr>
-                      <th scope="row">Phone:</th>
+                      <th scope="row" class="SearchModuleMainCol">Phone:</th>
                       <td>123 456 7890</td>
                     </tr>
                     <tr>
-                      <th scope="row">Address:</th>
+                      <th scope="row" class="SearchModuleMainCol">Address:</th>
                       <td>4321 SW Curlybriskey Ave, Eugene OR</td>
+                    </tr>
+                    <tr>
+                      <th scope="row" class="SearchModuleMainCol">Website:</th>
+                      <td><a href="https://curlybrisketangels.com/search">southwesthealthcounseling.org</a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Description:</th>
+                      <td>Southwest Health Counseling focuses on the well-being of your children by providing free education services to families that have low-income. We wish to provide the best service that contributes to the betterment of our local communities healthiness.</td>
                     </tr>
                   </tbody>
                 </table>
@@ -209,12 +199,11 @@
     
     <nav class="searchResultsNav" aria-label="Page navigation example" onClick="document.getElementById('searchResults').scrollIntoView();">
       <ul class="pagination justify-content-center">
-        <li class="page-item disabled">
-          <a class="page-link" href="#" tabindex="-1">Previous</a>
-          <a class="page-link" href="#">Next</a>
-        </li>
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
       </ul>
     </nav>
+    
     
     <footer>
         <span>
