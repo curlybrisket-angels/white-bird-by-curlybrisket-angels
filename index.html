@@ -26,11 +26,11 @@
             <h2>Please enter information about the service you are looking for:</h2>
         </div>
 
-        <form method="POST" action="/_startup" id="searchForm">
+        <form method="POST" action="/_search" id="searchForm">
           <div class="form-group">
             <label for="formInputState">State</label>
             <select class="form-control" id="formInputState">
-							<option></option>
+              <option>N/A</option>
               <option>Oregon</option>
               <option>Washington</option>
               <option>California</option>
@@ -41,7 +41,7 @@
           <div class="form-group">
             <label for="formInputCity">City</label>
             <select class="form-control" id="formInputCity">
-							<option></option>
+              <option>N/A</option>
               <option>Cottage Grove</option>
               <option>Eugene</option>
               <option>Oakridge</option>
@@ -52,7 +52,7 @@
           <div class="form-group">
             <label for="formInputCategory1">Category 1</label>
             <select class="form-control" id="formInputCategory1">
-							<option></option>
+							<option>N/A</option>
 							<option>Abortions</option>
 							<option>Absentee Ballots</option>
 							<option>Abuse</option>
@@ -91,7 +91,7 @@
           <div class="form-group">
             <label for="formInputCategory2">Category 2</label>
             <select class="form-control" id="formInputCategory2">
-							<option></option>
+							<option>N/A</option>
 							<option>Adoption</option>
 							<option>Aids</option>
 							<option>Brain Injuries</option>
@@ -202,8 +202,8 @@
     </body>
     
     <nav id="searchResultsNav">
-        <a href="#">prev</a>
-        <a href="#">next</a>
+        <a href="#" onClick="document.getElementById('searchResults').scrollIntoView();">prev</a>
+        <a href="#" onClick="document.getElementById('searchResults').scrollIntoView();">next</a>
     </nav>
     
     <footer>
