@@ -67,7 +67,7 @@ test = createdict.get_dictionary()
 print(test)
 """
 @app.route("/")
-@app.route("/search", methods=['POST'])
+@app.route("/search", methods=['GET', 'POST'])
 def search():
 	"""
 	The default page which is a search page that allows the client to send various amounts of information 
@@ -92,6 +92,27 @@ def search():
 	print("diction = " + str(diction.get_dictionary))
 	for i in orgs.find(diction.get_dictionary()):
 		orgs_list.append(i)
+	for i in orgs_list:
+		del i['_id']
+		del i['category1']
+		del i['category2']
+		#i['google_link'] = (format_address(i['address'], i['city'], i['state']))
 	flask.g.orgs_list = orgs_list
 	print("orgslist = " + str(orgs_list))
 	return flask.render_template("index.html")
+
+def format_address(addr, city, state):
+	"""
+	Takes a string that is an address and formats it into a google maps link for use on the webpage.
+	"""
+	pass
+	final_str = "https://www.google.com/maps/dir/?api=1&query="
+	final_str += addr.replace(" ", "+")
+	final_str += "%"
+	final_str += city.replace(" ", "+")
+	final_str += "%"
+	final_str += state.replace(" ", "+")
+	print("formatted address = " + final_str)
+	return final_str
+
+
