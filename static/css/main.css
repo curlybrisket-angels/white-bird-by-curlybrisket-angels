@@ -4,6 +4,7 @@ html {
 }
 
 body {
+    font-size: 1.5em;
     font-family: Roboto, Helvetica, sans-serif;
     margin: 60px;
     background-color: lightblue;
@@ -34,7 +35,7 @@ h2 {
     text-align: center;
 }
 
-#searchForm {
+#search {
     margin: 0px 170px 0px 170px;
     margin-top: 15px;
     display: block;
@@ -42,6 +43,7 @@ h2 {
 }
 
 #searchButton {
+    text-align: center;
     width: 120px;
     margin: 20px 0 0 0;
     background-color: cadetblue
@@ -106,6 +108,7 @@ footer {
 /* Smartphones (portrait and landscape) ----------- */
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     body {
+        text-align: center;
         margin: 30px;
         font-size: 3em;
     }
@@ -120,14 +123,14 @@ footer {
         font-size: 1em;
     }
     
-    #searchForm {
+    #search {
         text-align: center;
         margin: 60px;
     }
     
     .form-control {
         text-align: left;
-        font-size: .9em;
+        font-size: .7em;
         min-height: 100px
     }
     
