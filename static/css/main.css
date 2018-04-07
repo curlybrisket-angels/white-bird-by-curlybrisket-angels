@@ -1,3 +1,8 @@
+html {
+    min-width: 520px;
+    max-width: 1600px
+}
+
 body {
     font-family: Roboto, Helvetica, sans-serif;
     margin: 60px;
@@ -69,6 +74,7 @@ h4 {
 }
 
 .resultModule {
+    border-radius: 10px;
     vertical-align: center;
     padding: 20px 20px 5px 20px;
     background-color: cadetblue;
@@ -95,4 +101,31 @@ th {
 
 footer {
 	text-align: center;
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    body {
+        margin: 30px;
+        font-size: 3em;
+        //background-color: red;
+    }
+    
+    h1 {
+        font-size: 2em
+    }
+    
+    h2 {
+        margin: 0px 155px 0px 155px;
+        font-size: 1em
+    }
+    
+    #searchForm {
+        margin: 60px;
+    }
+    
+    .form-control {
+        font-size: .9em;
+        min-height: 100px
+    }
 }
