@@ -123,7 +123,7 @@
           </div>
         </form>
 
-        <button id="searchButton" type="button" class="btn btn-primary btn-lg">Search</button>
+        <button id="searchButton" type="button" class="btn btn-primary btn-lg" onClick="document.getElementById('searchResults').scrollIntoView();">Search</button>
 <!--
         <div id="demo">
 
@@ -197,8 +197,15 @@
             
         </div>
 
-    </body>
 
+        
+    </body>
+    
+    <nav id="searchResultsNav">
+        <a href="#">prev</a>
+        <a href="#">next</a>
+    </nav>
+    
     <footer>
         <span>
             <a class="navbar-brand" href="/">
