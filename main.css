@@ -12,6 +12,14 @@ h2 {
     text-align: center;
 }
 
+.logo-image {
+	height: 64px;
+}
+
+.footer {
+	text-align: center;
+}
+
 #searchButton {
     width: 120px;
     margin: 20px 0 0 0;
