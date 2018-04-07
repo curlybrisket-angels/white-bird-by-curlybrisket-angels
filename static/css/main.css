@@ -29,7 +29,7 @@ h1 {
 }
 
 h2 {
-    margin-top: 10px;
+    margin: 40px 170px 60px 170px;
     display: block;
     text-align: center;
 }
@@ -108,24 +108,55 @@ footer {
     body {
         margin: 30px;
         font-size: 3em;
-        //background-color: red;
     }
     
     h1 {
-        font-size: 2em
+        font-size: 2em;
+        text-align: center;
     }
     
     h2 {
         margin: 0px 155px 0px 155px;
-        font-size: 1em
+        font-size: 1em;
     }
     
     #searchForm {
+        text-align: center;
         margin: 60px;
     }
     
     .form-control {
+        text-align: left;
         font-size: .9em;
         min-height: 100px
     }
+    
+    #searchButton {
+        margin-top: 40px;
+        font-size: 1em;
+        width: 320px;
+        text-align: center;
+    }
+    
+    h4 {
+        font-size: 1.2em;
+        font-weight: bolder;
+    }
+    
+    #searchResults {
+        font-size: .9em;
+        text-align: left;
+        margin-top: 110px;
+    }
+
+    .resultModule {
+        border-radius: 10px;
+        vertical-align: center;
+        padding: 20px 20px 5px 20px;
+        background-color: cadetblue;
+        margin: 0px 10px 15px 10px;
+    }
+    
+    
+    
 }
