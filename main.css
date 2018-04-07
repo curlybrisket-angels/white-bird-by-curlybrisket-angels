@@ -26,10 +26,19 @@ h2 {
     text-align: center;
 }
 
+<<<<<<< HEAD
 #searchForm {
     margin-top: 15px;
     display: block;
 
+=======
+.logo-image {
+	height: 64px;
+}
+
+.footer {
+	text-align: center;
+>>>>>>> 6cf47084f9898a7a68ac84b02984dfbfde631702
 }
 
 #searchButton {
