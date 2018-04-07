@@ -1,5 +1,19 @@
 body {
     font-family: Roboto, Helvetica, sans-serif;
-    margin: 0;
-    background-color: #fff;
+    margin: 40px;
+    background-color: lightblue;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+}
+
+#searchButton {
+    width: 120px;
+    margin: 20px 0 0 0;
+    background-color: cadetblue
 }

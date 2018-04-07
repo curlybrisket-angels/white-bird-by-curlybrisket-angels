@@ -4,12 +4,82 @@
     <head>
         <meta charset="utf-8">
         <title>White Bird challenge</title>
+        
+        <!--Bootstrap files-->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        
+        <!--Custom css-->
         <link rel="stylesheet" href="main.css" media="screen">
+        
+        <!--Custom javascript-->
+        <script src="main.js"></script>
+        
     </head>
 
     <body>
-        <h1>White Bird Challenge</h1>
-        <p>curlybrisket angels</p>
+        
+        <h1>Search for Resources</h1>
+        <h2>Please enter information about the service you are looking for:</h2>
+        
+        <form>
+          <div class="form-group">
+            <label for="formInputState">State</label>
+            <select class="form-control" id="formInputState">
+              <option>Oregon</option>
+              <option>Washington</option>
+              <option>California</option>
+              <option>Idaho</option>
+              <option>Montana</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="formInputCity">City</label>
+            <select class="form-control" id="formInputCity">
+              <option>Cottage Grove</option>
+              <option>Eugene</option>
+              <option>Oakridge</option>
+              <option>Portland</option>
+              <option>Springfield</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="formInputCategory1">Category 1</label>
+            <select class="form-control" id="formInputCategory1">
+              <option>Abuse</option>
+              <option>Academic Counseling</option>
+              <option>Adoption</option>
+              <option>Adult High School Diploma Programs</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="formInputCategory2">Category 2</label>
+            <select class="form-control" id="formInputCategory2">
+              <option>"none"</option>
+              <option>Women</option>
+              <option>Youth</option>
+              <option>Counseling</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="formInputCompany">Company</label>
+            <input type="text" class="form-control" id="formInputCompany" placeholder="ex: womens shelter">
+          </div>
+        </form>
+        
+        <button id="searchButton" type="button" class="btn btn-primary btn-lg">Search</button>
+<!--
+        <div id="demo">
+            
+        <h2>Let AJAX change this text</h2>
+            <button type="button" onclick="loadDoc()">submit search</button>
+        </div>
+-->
+        
     </body>
+    
+    
 
 </html>
