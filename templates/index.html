@@ -12,7 +12,12 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
         <!--Custom css-->
+<<<<<<< HEAD
         <link rel="stylesheet" href="static/css/main.css" media="screen">
+=======
+        <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/main.css') }}" media="screen">
+        <link rel="stylesheet" href="../static/css/main.css" media="screen">
+>>>>>>> origin/master
 
         <!--Custom javascript-->
         <script src="static/main.js"></script>
@@ -22,10 +27,11 @@
     <body>
         <div id="titleBlock">
             <h1>Search for Resources</h1>
-            <img id="whiteBirdLogo" src="http://whitebirdclinic.org/wp-content/uploads/2017/11/wbc-clr.png">
+            <img id="whiteBirdLogo" src="https://whitebirdclinic.org/wp-content/uploads/2017/11/wbc-clr.png">
             <h2>Please enter information about the service you are looking for:</h2>
         </div>
 
+<<<<<<< HEAD
         <form method="POST" action="/search" id="search" name="search">
           <fieldset>
             <div class="form-group">
@@ -135,9 +141,99 @@
         </div>
 -->
 
+=======
+        <form method="POST" action="/_startup" id="searchForm">
+          <div class="form-group">
+            <label for="formInputCity">City</label>
+            <select class="form-control" id="formInputCity">
+              <option>N/A</option>
+              <option>Cottage Grove</option>
+              <option>Eugene</option>
+              <option>Oakridge</option>
+              <option>Portland</option>
+              <option>Springfield</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="formInputCategory1">Category 1</label>
+            <select class="form-control" id="formInputCategory1">
+							<option>N/A</option>
+							<option>Abortions</option>
+							<option>Absentee Ballots</option>
+							<option>Abuse</option>
+							<option>Academic Counseling</option>
+							<option>Adoption</option>
+							<option>Adult High School Diploma Programs</option>
+							<option>Advocacy</option>
+							<option>Agricultural Assistance</option>
+							<option>Aids</option>
+							<option>Air Pollution Control</option>
+							<option>Alzheimer's Disease</option>
+							<option>Ambulance Service</option>
+							<option>Anger Management</option>
+							<option>Animal Services</option>
+							<option>Animal/insect/snake Bites</option>
+							<option>Assistive Technology</option>
+							<option>Autism</option>
+							<option>Bail</option>
+							<option>Battered Women's Shelters</option>
+							<option>Bedding/linen</option>
+							<option>Bereavement Counseling</option>
+							<option>Birth Control</option>
+							<option>Blood Banks</option>
+							<option>Blood Pressure Screening</option>
+							<option>Brain Injuries</option>
+							<option>Breastfeeding</option>
+							<option>Business Assistance</option>
+							<option>Cancer</option>
+							<option>Cardio-Pulmonary Resuscitation</option>
+							<option>Career Counseling</option>
+							<option>Case Management</option>
+							<option>Charities/Foundations/Funding Organizations</option>
+							<option>Child Abuse Prevention</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="formInputCategory2">Category 2</label>
+            <select class="form-control" id="formInputCategory2">
+							<option>N/A</option>
+							<option>Adoption</option>
+							<option>Aids</option>
+							<option>Brain Injuries</option>
+							<option>Children</option>
+							<option>Counseling</option>
+							<option>Developmental Disabilities</option>
+							<option>Disability</option>
+							<option>Domestic Violence</option>
+							<option>Education</option>
+							<option>Ex-offender Services</option>
+							<option>Homeless People</option>
+							<option>Homelessness</option>
+							<option>Information And Referral</option>
+							<option>Mental/emotional Disturbance</option>
+							<option>Minority Groups</option>
+							<option>Reporting/Emergency Response</option>
+							<option>Senior Citizens</option>
+							<option>Sexual</option>
+							<option>Testing</option>
+							<option>Treatment</option>
+							<option>Veterans</option>
+							<option>Women</option>
+							<option>Youth</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="formInputCompany">Company</label>
+            <input type="text" class="form-control" id="formInputCompany" placeholder="ex: womens shelter">
+          </div>
+            
+          <button id="searchButton" type="button" class="btn btn-primary btn-lg" onClick="document.getElementById('searchResults').scrollIntoView();">Search</button>  
+        </form>
+
+>>>>>>> origin/master
         <div id="searchResults">
             <h1>Results</h1>
-            
+
             <div class="resultModule">
                 <h4>Southwest Health Counseling</h4>
                 <table class="table table-sm table-light">
@@ -154,10 +250,17 @@
                       <th scope="row">Address:</th>
                       <td>4321 SW Curlybriskey Ave, Eugene OR</td>
                     </tr>
+                    <tr>
+                      <th scope="row">Website:</th>
+                      <td><a href="https://curlybrisketangels.com/search">southwesthealthcounseling.org</a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Description:</th>
+                      <td>Southwest Health Counseling focuses on the well-being of your children by providing free education services to families that have low-income. We wish to provide the best service that contributes to the betterment of our local communities healthiness.</td>
+                    </tr>
                   </tbody>
-                </table>  
+                </table>
             </div>
-            
             <div class="resultModule">
                 <h4>Southwest Health Counseling</h4>
                 <table class="table table-sm table-light">
@@ -174,10 +277,17 @@
                       <th scope="row">Address:</th>
                       <td>4321 SW Curlybriskey Ave, Eugene OR</td>
                     </tr>
+                    <tr>
+                      <th scope="row">Website:</th>
+                      <td><a href="https://curlybrisketangels.com/search">southwesthealthcounseling.org</a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Description:</th>
+                      <td>Southwest Health Counseling focuses on the well-being of your children by providing free education services to families that have low-income. We wish to provide the best service that contributes to the betterment of our local communities healthiness.</td>
+                    </tr>
                   </tbody>
-                </table>  
+                </table>
             </div>
-            
             <div class="resultModule">
                 <h4>Southwest Health Counseling</h4>
                 <table class="table table-sm table-light">
@@ -194,12 +304,21 @@
                       <th scope="row">Address:</th>
                       <td>4321 SW Curlybriskey Ave, Eugene OR</td>
                     </tr>
+                    <tr>
+                      <th scope="row">Website:</th>
+                      <td><a href="https://curlybrisketangels.com/search">southwesthealthcounseling.org</a></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Description:</th>
+                      <td>Southwest Health Counseling focuses on the well-being of your children by providing free education services to families that have low-income. We wish to provide the best service that contributes to the betterment of our local communities healthiness.</td>
+                    </tr>
                   </tbody>
-                </table>  
+                </table>
             </div>
-            
+
         </div>
 
+<<<<<<< HEAD
 
         
     </body>
@@ -209,6 +328,25 @@
         <a href="#" onClick="document.getElementById('searchResults').scrollIntoView();">next</a>
     </nav>
     
+=======
+    </body>
+    
+<!--
+    <div id="searchResultsNav">
+        <a href="#" onClick="document.getElementById('searchResults').scrollIntoView();">prev</a>
+        <a href="#" onClick="document.getElementById('searchResults').scrollIntoView();">next</a>
+     </div>
+-->
+    
+    <nav class="searchResultsNav" aria-label="Page navigation example" onClick="document.getElementById('searchResults').scrollIntoView();">
+      <ul class="pagination justify-content-center">
+        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+        <li class="page-item"><a class="page-link" href="#">Next</a></li>
+      </ul>
+    </nav>
+    
+    
+>>>>>>> origin/master
     <footer>
         <span>
             <a class="navbar-brand" href="/">
