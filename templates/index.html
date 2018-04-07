@@ -13,7 +13,7 @@
 
         <!--Custom css-->
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" media="screen">
-<!--        <link rel="stylesheet" href="../static/css/main.css" media="screen">-->
+        <link rel="stylesheet" href="../static/css/main.css" media="screen">
 
         <!--Custom javascript-->
         <script src="static/main.js"></script>
@@ -200,11 +200,22 @@
 
     </body>
     
-    <nav id="searchResultsNav">
+<!--
+    <div id="searchResultsNav">
         <a href="#" onClick="document.getElementById('searchResults').scrollIntoView();">prev</a>
         <a href="#" onClick="document.getElementById('searchResults').scrollIntoView();">next</a>
-     </nav>
-
+     </div>
+-->
+    
+    <nav class="searchResultsNav" aria-label="Page navigation example" onClick="document.getElementById('searchResults').scrollIntoView();">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled">
+          <a class="page-link" href="#" tabindex="-1">Previous</a>
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+    
     <footer>
         <span>
             <a class="navbar-brand" href="/">
