@@ -4,16 +4,58 @@ body {
     background-color: lightblue;
 }
 
+#titleBlock {
+    text-align: center;
+    vertical-align: middle;
+    align-content: center;
+    display: block;
+}
+
+#whiteBirdLogo {
+    width: 20%;
+    display: inline-flex;
+}
+
 h1 {
+    padding: 10px;
+    float: none;
+    display: inline-flex;
     text-align: center;
 }
 
 h2 {
+    margin-top: 10px;
+    display: block;
     text-align: center;
+}
+
+#searchForm {
+    margin-top: 15px;
+    display: block;
+
 }
 
 #searchButton {
     width: 120px;
     margin: 20px 0 0 0;
     background-color: cadetblue
+}
+
+
+
+#searchResults{
+    text-align: center;
+    margin-top: 110px
+}
+
+.resultModule{
+    
+}
+
+.logo-image {
+	height: 64px;
+}
+
+footer {
+	text-align: center;
 }
