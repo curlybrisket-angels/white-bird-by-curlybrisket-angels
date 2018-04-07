@@ -12,10 +12,12 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
         <!--Custom css-->
-        <link rel="stylesheet" href="static/css/main.css" media="screen">
+        <!-- <link rel="stylesheet" href="static/css/main.css" media="screen"> -->
 <!--
         <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/main.css') }}" media="screen">
         <link rel="stylesheet" href="../static/css/main.css" media="screen"> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/main.css') }}" media="screen">
+        <link rel="stylesheet" href="../static/css/main.css" media="screen">
 
         <!--Custom javascript-->
         <script src="static/main.js"></script>
@@ -27,21 +29,10 @@
             <h1>Search for Resources</h1>
             <img id="whiteBirdLogo" src="https://whitebirdclinic.org/wp-content/uploads/2017/11/wbc-clr.png">
             <h2>Please enter information about the service you are looking for:</h2>
-        </div>
+        </div>  
 
         <form method="POST" action="/search" id="search" name="search">
           <fieldset>
-            <div class="form-group">
-              <label for="formInputState">State</label>
-              <select name="formInputState" class="form-control" id="formInputState">
-                <option>N/A</option>
-                <option>OR</option>
-                <option>WA</option>
-                <option>CA</option>
-                <option>ID</option>
-                <option>MO</option>
-              </select>
-            </div>
             <div class="form-group">
               <label for="formInputCity">City</label>
               <select name="formInputCity" class="form-control" id="formInputCity">
@@ -121,11 +112,12 @@
   							<option>Youth</option>
               </select>
             </div>
+              
             <div class="form-group">
-              <label for="formInputCompany">Company</label>
-              <input type="text" class="form-control" id="formInputCompany" name="formInputCompany" value="N/A">
+                <label for="formInputCompany">Company</label>
+                <input type="text" class="form-control" id="formInputCompany" name="formInputCompany" value="N/A">
             </div>
-            <input type="submit" value="Submit"/>
+              
           </fieldset>
         </form>
 
@@ -171,6 +163,14 @@
             {% endfor %}
 
             <!--
+=======
+            
+          <button type="submit" value="Search" class="btn btn-primary btn-lg" id="searchButton" onClick="document.getElementById('searchResults').scrollIntoView();">Search</button> 
+        </form>
+
+        <div id="searchResults">
+            <h1 id="resultsTitle">Results</h1>
+>>>>>>> fbfd0b8a418b4b84fb1f9f529558186658f62f69
 
             <div class="resultModule">
                 <h4>Southwest Health Counseling</h4>
@@ -264,14 +264,14 @@
         <a href="#" onClick="document.getElementById('searchResults').scrollIntoView();">next</a>
      </div>
 -->
-    
-    <nav class="searchResultsNav" aria-label="Page navigation example" onClick="document.getElementById('searchResults').scrollIntoView();">
-      <ul class="pagination justify-content-center">
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-      </ul>
-    </nav>
-
+        <nav class="searchResultsNav" aria-label="Page navigation example" onClick="document.getElementById('searchResults').scrollIntoView();">
+          <ul class="pagination justify-content-center">
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+          </ul>
+        </nav>
+        
+    </body>
     <footer>
         <span>
             <a class="navbar-brand" href="/">
@@ -280,6 +280,5 @@
             </a>
         </span>
     </footer>
-
 
 </html>
