@@ -13,6 +13,7 @@
 
         <!--Custom css-->
         <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}" media="screen">
+<!--        <link rel="stylesheet" href="../static/css/main.css" media="screen">-->
 
         <!--Custom javascript-->
         <script src="static/main.js"></script>
@@ -30,7 +31,7 @@
           <div class="form-group">
             <label for="formInputState">State</label>
             <select class="form-control" id="formInputState">
-							<option></option>
+              <option>N/A</option>
               <option>Oregon</option>
               <option>Washington</option>
               <option>California</option>
@@ -41,7 +42,7 @@
           <div class="form-group">
             <label for="formInputCity">City</label>
             <select class="form-control" id="formInputCity">
-							<option></option>
+              <option>N/A</option>
               <option>Cottage Grove</option>
               <option>Eugene</option>
               <option>Oakridge</option>
@@ -52,7 +53,7 @@
           <div class="form-group">
             <label for="formInputCategory1">Category 1</label>
             <select class="form-control" id="formInputCategory1">
-							<option></option>
+							<option>N/A</option>
 							<option>Abortions</option>
 							<option>Absentee Ballots</option>
 							<option>Abuse</option>
@@ -91,7 +92,7 @@
           <div class="form-group">
             <label for="formInputCategory2">Category 2</label>
             <select class="form-control" id="formInputCategory2">
-							<option></option>
+							<option>N/A</option>
 							<option>Adoption</option>
 							<option>Aids</option>
 							<option>Brain Injuries</option>
@@ -123,7 +124,7 @@
           </div>
         </form>
 
-        <button id="searchButton" type="button" class="btn btn-primary btn-lg">Search</button>
+        <button id="searchButton" type="button" class="btn btn-primary btn-lg" onClick="document.getElementById('searchResults').scrollIntoView();">Search</button>
 <!--
         <div id="demo">
 
@@ -198,6 +199,11 @@
         </div>
 
     </body>
+    
+    <nav id="searchResultsNav">
+        <a href="#" onClick="document.getElementById('searchResults').scrollIntoView();">prev</a>
+        <a href="#" onClick="document.getElementById('searchResults').scrollIntoView();">next</a>
+     </nav>
 
     <footer>
         <span>
