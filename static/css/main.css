@@ -1,6 +1,6 @@
 html {
     min-width: 520px;
-    max-width: 1600px
+/*    max-width: 1600px*/
 }
 
 body {
@@ -8,6 +8,10 @@ body {
     font-family: Roboto, Helvetica, sans-serif;
     margin: 60px;
     background-color: lightblue;
+}
+
+a {
+    color: #2eccd1;
 }
 
 #titleBlock {

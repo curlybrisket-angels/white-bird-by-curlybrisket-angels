@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="../static/css/main.css" media="screen">
 
         <!--Custom javascript-->
-        <script src="static/main.js"></script>
+        <script src="../static/main.js"></script>
 
     </head>
 
@@ -113,10 +113,17 @@
                 <input type="text" class="form-control" id="formInputCompany" name="formInputCompany" value="N/A">
             </div>
           </fieldset>
+<<<<<<< HEAD
           <button type="submit" value="Search" class="btn btn-primary btn-lg" id="searchButton" onClick="document.getElementById('searchResults').scrollIntoView();">Search</button>
         </form>
         {% if g.org_count is gt 0 %}
           <div id="searchResults">
+=======
+          <button id="searchButton" type="button" class="btn btn-primary btn-lg" onClick="document.getElementById('searchResults').scrollIntoView();">Search</button>
+        </form>
+
+        <div id="searchResults">
+>>>>>>> 0dd154c63190e0c925d45859d7ee7d76217cc7fc
             <h1>Results</h1>
             {% for org in g.orgs_list %}
               <div class="resultModule">
@@ -148,8 +155,6 @@
               </div>
             {% endfor %}
 
-    </body>
-    
         <nav class="searchResultsNav" aria-label="Page navigation example" onClick="document.getElementById('searchResults').scrollIntoView();">
           <ul class="pagination justify-content-center">
             <li class="page-item"><a class="page-link" href="#">Previous</a></li>
@@ -167,4 +172,6 @@
         </span>
     </footer>
 
+    <script src="../static/main.js"></script>
+    
 </html>
