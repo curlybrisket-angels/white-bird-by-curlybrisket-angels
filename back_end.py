@@ -5,7 +5,7 @@ from flask import url_for
 from pymongo import MongoClient
 import pprint
 
-app = flask.Flask(__name__)
+app = flask.Flask(__name__, static_folder="static", template_folder="templates")
 
 client = MongoClient('mongodb://138.197.205.128:27017/')
 
@@ -43,8 +43,10 @@ class CreateDictionary:
 
    def update_dictionary(self):
        for k, v in list(self.current_dict.items()):
-           if v == None:
+           if v == 'N/A':
                del self.current_dict[k]
+           elif v == '':
+           	   del self.current_dict[k]
 
        if bool(self.current_dict) == True:
            self.found = 1
@@ -72,20 +74,24 @@ def search():
 	to the server in order to check whether or not the requested resource is in the database. Redirects to
 	the results page with the specified parameters.
 	"""
+	print("entering search")
+	test = flask.request.form.get("test")
+	print("test = " + str(test))
+	testselect = flask.request.form.get("testselect")
+	print("testselect = " + str(testselect))
 	category1 = flask.request.form.get("formInputCategory1")
+	print("category 1 = " + str(category1))
 	category2 = flask.request.form.get("formInputCategory2")
 	state = flask.request.form.get("formInputState")
+	print("state = " + str(state))
 	city = flask.request.form.get("formInputCity")
 	company = flask.request.form.get("formInputCompany")
 	diction = CreateDictionary(category1, category2, state, city, company)
+	diction.update_dictionary()
 	orgs_list = []
-	if diction.found == 0:
-		flask.g.found = 0
-		for i in orgs.find():
-			orgs_list.append(i)
-		flask.g.orgs_list = orgs_list
-		return flask.render_template("index.html")
-	for i in orgs.find(diction.get_dictionary):
+	print("diction = " + str(diction.get_dictionary))
+	for i in orgs.find(diction.get_dictionary()):
 		orgs_list.append(i)
 	flask.g.orgs_list = orgs_list
+	print("orgslist = " + str(orgs_list))
 	return flask.render_template("index.html")
