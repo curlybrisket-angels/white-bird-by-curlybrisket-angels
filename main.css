@@ -4,12 +4,32 @@ body {
     background-color: lightblue;
 }
 
+#whiteBirdLogo {
+    width: 20%;
+    float: right;
+    display: block;
+}
+
+#titleBlock {
+    display: block;
+}
+
 h1 {
     text-align: center;
+    width: 75%;
+    height: 20%;
 }
 
 h2 {
+    margin-top: 200px;
+    display: block;
     text-align: center;
+}
+
+#searchForm {
+    margin-top: 15px;
+    display: block;
+
 }
 
 #searchButton {
