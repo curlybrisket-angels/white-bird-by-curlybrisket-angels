@@ -4,45 +4,58 @@ body {
     background-color: lightblue;
 }
 
-#whiteBirdLogo {
-    width: 20%;
-    float: right;
+#titleBlock {
+    text-align: center;
+    vertical-align: middle;
+    align-content: center;
     display: block;
 }
 
-#titleBlock {
-    display: block;
+#whiteBirdLogo {
+    width: 20%;
+    display: inline-flex;
 }
 
 h1 {
+    padding: 10px;
+    float: none;
+    display: inline-flex;
     text-align: center;
-    width: 75%;
-    height: 20%;
 }
 
 h2 {
-    margin-top: 200px;
+    margin-top: 10px;
     display: block;
     text-align: center;
 }
 
-<<<<<<< HEAD
 #searchForm {
     margin-top: 15px;
     display: block;
 
-=======
-.logo-image {
-	height: 64px;
-}
-
-.footer {
-	text-align: center;
->>>>>>> 6cf47084f9898a7a68ac84b02984dfbfde631702
 }
 
 #searchButton {
     width: 120px;
     margin: 20px 0 0 0;
     background-color: cadetblue
+}
+
+
+
+#searchResults{
+    text-align: center;
+    margin-top: 110px
+}
+
+.resultModule{
+    
+}
+
+.logo-image {
+	height: 64px;
+}
+
+footer {
+	text-align: center;
 }
