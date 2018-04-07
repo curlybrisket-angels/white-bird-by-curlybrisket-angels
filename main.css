@@ -1,6 +1,6 @@
 body {
     font-family: Roboto, Helvetica, sans-serif;
-    margin: 40px;
+    margin: 60px;
     background-color: lightblue;
 }
 
@@ -41,16 +41,44 @@ h2 {
     background-color: cadetblue
 }
 
+/*
+ul {
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
 
+li {
+    float: left;
+    list-style-type: none;
+}
+*/
+
+h4 {
+    background-color: cadetblue;
+    text-align: left;
+    padding: 0px 0px 10px 0px;
+    
+}
 
 #searchResults{
-    text-align: center;
-    margin-top: 110px
+    font-size: 20px;
+    text-align: left;
+    margin-top: 110px;
 }
 
 .resultModule{
-    
+    vertical-align: center;
+    padding: 20px 20px 5px 20px;
+    background-color: cadetblue;
+    margin: 0px 10px 15px 10px;
 }
+
+.resultTable{
+    background-color: cadetblue
+}
+
+
 
 .logo-image {
 	height: 64px;
