@@ -1,13 +1,18 @@
+/*
 html {
     min-width: 520px;
-/*    max-width: 1600px*/
+    font-family: fantasy;
+    max-width: 1600px
 }
+*/
 
 body {
+    min-width: 520px;
     font-size: 1.5em;
     font-family: Roboto, Helvetica, sans-serif;
     margin: 60px;
     background-color: lightblue;
+    
 }
 
 a {
@@ -74,6 +79,8 @@ h4 {
 }
 
 #searchResults {
+/*    visibility: hidden;*/
+    display: none;
     font-size: 20px;
     text-align: left;
     margin-top: 110px;

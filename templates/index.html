@@ -119,10 +119,10 @@
             </div>
               
           </fieldset>
-          <button id="searchButton" type="button" class="btn btn-primary btn-lg" onClick="document.getElementById('searchResults').scrollIntoView();">Search</button>
+          <button id="searchButton" type="button" class="btn btn-primary btn-lg" onClick="setTimeout(submitClick, 500)">Search</button>
         </form>
 
-        <div id="searchResults">
+        <div id="searchResults" >
             <h1>Results</h1>
             {% for org in g.orgs_list %}
               <div class="resultModule">

@@ -1,12 +1,16 @@
 var titleBlock = document.getElementById('titleBlock');
 var searchButton = document.getElementById('searchButton');
 
-//alert("hey");
 
 
 //var category1 = document.getElementById('formInputCategory1');
 
 
+
+function submitClick() {
+    document.getElementById('searchResults').style.display = "block";
+    document.getElementById('searchResults').scrollIntoView();
+};
 
 function changeColor() {
     //titleBlock.style.backgroundColor = "red";
@@ -15,7 +19,6 @@ function changeColor() {
 //    twitModal.style.display = 'block';
 };
 
-//alert ("yo");
 
 changeColor();
 
