@@ -32,29 +32,27 @@ class CreateDictionary:
 	dictionary that is in the correct format to be used to search in the MongoDB database. 
 	"""
 	def __init__(self, category1=None, category2=None, city=None, company=None):
-		# Initialize variables
-       	self.cat1 = category1
-       	self.cat2 = category2
-       	self.city = city
-       	self.company = company
-       	self.current_dict = {"category1": self.cat1, "category2": self.cat2, 
-                            "city": self.city, "company": self.company}
+		self.cat1 = category1
+		self.cat2 = category2
+		self.city = city
+		self.company = company
+		self.current_dict = {"category1": self.cat1, "category2": self.cat2, "city": self.city, "company": self.company}
 
-   	def __repr__(self):
-   		# How the object will be printed
-       	return '{}'.format(self.current_dict)
+	def __repr__(self):
+		# How the object will be printed
+		return '{}'.format(self.current_dict)
 
-   	def update_dictionary(self):
-   		# Update the dictionary in order to get rid of empty string and 'N/A' values and keys from the webpage
-       	for k, v in list(self.current_dict.items()):
-           	if v == 'N/A':
-               	del self.current_dict[k]
-           	elif v == '':
-           	   	del self.current_dict[k]
+	def update_dictionary(self):
+		# Update the dictionary in order to get rid of empty string and 'N/A' values and keys from the webpage
+		for k, v in list(self.current_dict.items()):
+			if v == 'N/A':
+				del self.current_dict[k]
+			elif v == '':
+				del self.current_dict[k]
 
-   	def get_dictionary(self):
-   		# Return the dictionary in the format to search the database
-       	return self.current_dict
+	def get_dictionary(self):
+		# Return the dictionary in the format to search the database
+		return self.current_dict
 
 #Testing Suite
 """

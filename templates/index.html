@@ -1,184 +1,204 @@
 <!DOCTYPE html>
 <html>
+  <head>
+      <meta charset="utf-8">
+      <title>White Bird challenge</title>
+      <!--Favicon-->
+      <link rel="icon" href="http://whitebirdclinic.org/wp-content/uploads/2017/11/wbc-clr.png">
 
-    <head>
-        <meta charset="utf-8">
-        <title>White Bird challenge</title>
-        <!--Favicon-->
-        <link rel="icon" href="http://whitebirdclinic.org/wp-content/uploads/2017/11/wbc-clr.png">
+      <!--Bootstrap files-->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <!--Bootstrap files-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+      <!--Link to the css file-->
+      <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/main.css') }}" media="screen">
+      <link rel="stylesheet" href="../static/css/main.css" media="screen">
 
-        <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/main.css') }}" media="screen">
-        <link rel="stylesheet" href="../static/css/main.css" media="screen">
+      <!--Custom javascript-->
+      <script src="../static/main.js"></script>
 
-        <!--Custom javascript-->
-        <script src="../static/main.js"></script>
+  </head>
 
-    </head>
+  <body>
+    <!--Title-->
+      <div id="titleBlock">
+          <h1>White Bird Resource Directory</h1>
+          <img id="whiteBirdLogo" src="https://whitebirdclinic.org/wp-content/uploads/2017/11/wbc-clr.png">
+          <h2>Please enter information about the service you are looking for:</h2>
+      </div>  
 
-    <body>
-        <div id="titleBlock">
-            <h1>Search for Resources</h1>
-            <img id="whiteBirdLogo" src="https://whitebirdclinic.org/wp-content/uploads/2017/11/wbc-clr.png">
-            <h2>Please enter information about the service you are looking for:</h2>
-        </div>  
+      <!--Submission Form to be sent to server-->
+      <form method="POST" action="/search" id="search" name="search">
+        <fieldset>
+          <div class="form-group">
+            <!--City Dropdown Menu-->
+            <label for="formInputCity">City</label>
+            <select name="formInputCity" class="form-control" id="formInputCity">
+              <option>N/A</option>
+              <option>Cottage Grove</option>
+              <option>Eugene</option>
+              <option>Oakridge</option>
+              <option>Portland</option>
+              <option>Springfield</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <!--Category 1 Dropdown Menu-->
+            <label for="formInputCategory1">Category 1</label>
+            <select name="formInputCategory1" class="form-control" id="formInputCategory1">
+							<option>N/A</option>
+							<option>Abortions</option>
+							<option>Absentee Ballots</option>
+							<option>Abuse</option>
+							<option>Academic Counseling</option>
+							<option>Adoption</option>
+							<option>Adult High School Diploma Programs</option>
+							<option>Advocacy</option>
+							<option>Agricultural Assistance</option>
+							<option>Aids</option>
+							<option>Air Pollution Control</option>
+							<option>Alzheimer's Disease</option>
+							<option>Ambulance Service</option>
+							<option>Anger Management</option>
+							<option>Animal Services</option>
+							<option>Animal/insect/snake Bites</option>
+							<option>Assistive Technology</option>
+							<option>Autism</option>
+							<option>Bail</option>
+							<option>Battered Women's Shelters</option>
+							<option>Bedding/linen</option>
+							<option>Bereavement Counseling</option>
+							<option>Birth Control</option>
+							<option>Blood Banks</option>
+							<option>Blood Pressure Screening</option>
+							<option>Brain Injuries</option>
+							<option>Breastfeeding</option>
+							<option>Business Assistance</option>
+							<option>Cancer</option>
+							<option>Cardio-Pulmonary Resuscitation</option>
+							<option>Career Counseling</option>
+							<option>Case Management</option>
+							<option>Charities/Foundations/Funding Organizations</option>
+							<option>Child Abuse Prevention</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <!--Category 2 Dropdown Menu-->
+            <label for="formInputCategory2">Category 2</label>
+            <select name="formInputCategory2" class="form-control" id="formInputCategory2">
+							<option>N/A</option>
+							<option>Adoption</option>
+							<option>Aids</option>
+							<option>Brain Injuries</option>
+							<option>Children</option>
+							<option>Counseling</option>
+							<option>Developmental Disabilities</option>
+							<option>Disability</option>
+							<option>Domestic Violence</option>
+							<option>Education</option>
+							<option>Ex-offender Services</option>
+							<option>Homeless People</option>
+							<option>Homelessness</option>
+							<option>Information And Referral</option>
+							<option>Mental/emotional Disturbance</option>
+							<option>Minority Groups</option>
+							<option>Reporting/Emergency Response</option>
+							<option>Senior Citizens</option>
+							<option>Sexual</option>
+							<option>Testing</option>
+							<option>Treatment</option>
+							<option>Veterans</option>
+							<option>Women</option>
+							<option>Youth</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <!--Company Input Field-->
+            <label for="formInputCompany">Company</label>
+            <input type="text" class="form-control" id="formInputCompany" name="formInputCompany" value="" placeholder="N/A">
+          </div>
+        </fieldset>
+          <!--Submit Button-->
+          <button id="searchButton" type="submit" class="btn btn-primary btn-lg">Search</button>
+      </form>
 
-        <form method="POST" action="/search" id="search" name="search">
-          
-          <fieldset>
-            <div class="form-group">
-              <label for="formInputCity">City</label>
-              <select name="formInputCity" class="form-control" id="formInputCity">
-                <option>N/A</option>
-                <option>Cottage Grove</option>
-                <option>Eugene</option>
-                <option>Oakridge</option>
-                <option>Portland</option>
-                <option>Springfield</option>
-              </select>
+      <!--If there is more than 1 search result-->
+      {% if g.org_count is gt 0 %}
+        <div id="searchResults">
+          <!--Print the amount of results found-->
+          <h1>{{ g.org_count }} results found</h1>
+          <!--Loop through the list of organizations-->
+          {% for org in g.orgs_list %}
+            <div class="resultModule">
+              <!--Print the company name-->
+              <h4>{{ org.company }}</h4>
+              <table class="table table-sm table-light">
+                <tbody class="resultTable">
+                  <tr>
+                    <th scope="row">Tags:</th>
+                    <!--Print the two categories, use the g.empty_str from flask to determine where to put commas-->
+                    <td> {{ org.category1 }}{% if org.category2 != g.empty_str %}, {{ org.category2 }} {% endif %} </td>
+                  </tr>
+                  <!--If the company has a phone number-->
+                  {% if org.phone != g.empty_str %}
+                  <tr>
+                    <!--Create the phone row in the table-->
+                    <th scope="row">Phone:</th>
+                    <!--Phone link in order to be clickable and redirect phones and computers to a call service-->
+                    <td><a href="tel:{{ org.phone }}"> {{ org.phone }} </a></td>
+                  </tr>
+                  {% endif %}
+                  <!--If the organization has an address-->
+                  {% if org.address != g.empty_str %}
+                  <tr>
+                    <!--Create the address row in the table-->
+                    <th scope="row">Address:</th>
+                    <!--Print the address and link it to the google maps location-->
+                    <td><a href="http://maps.google.com/?q={{ org.address }} {{ org.city }} {{ org.state }}">{{ org.address }} {{ org.city }} {{ org.state }}</a></td>
+                  </tr>
+                  {% endif %}
+                  <tr>
+                    <!--Once the websites are in the database, use a form similar to the address row in order to make the website a clickable link
+                      i.e <td><a href="{{ org.website }}>{{ org.website }}</a></td>-->
+                    <th scope="row">Website:</th>
+                    <td><a href="https://curlybrisketangels.com/search">feature-coming-soon.org</a></td>
+                  </tr>
+                  <tr>
+                    <!--Once the descriptions are in the database, use a simple jinja2 {{ org.description }} in the <td> tag-->
+                    <th scope="row">Description:</th>
+                    <td>Descriptions for the companies will be easily integrated once they are entered into the database.</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <div class="form-group">
-              <label for="formInputCategory1">Category 1</label>
-              <select name="formInputCategory1" class="form-control" id="formInputCategory1">
-  							<option>N/A</option>
-  							<option>Abortions</option>
-  							<option>Absentee Ballots</option>
-  							<option>Abuse</option>
-  							<option>Academic Counseling</option>
-  							<option>Adoption</option>
-  							<option>Adult High School Diploma Programs</option>
-  							<option>Advocacy</option>
-  							<option>Agricultural Assistance</option>
-  							<option>Aids</option>
-  							<option>Air Pollution Control</option>
-  							<option>Alzheimer's Disease</option>
-  							<option>Ambulance Service</option>
-  							<option>Anger Management</option>
-  							<option>Animal Services</option>
-  							<option>Animal/insect/snake Bites</option>
-  							<option>Assistive Technology</option>
-  							<option>Autism</option>
-  							<option>Bail</option>
-  							<option>Battered Women's Shelters</option>
-  							<option>Bedding/linen</option>
-  							<option>Bereavement Counseling</option>
-  							<option>Birth Control</option>
-  							<option>Blood Banks</option>
-  							<option>Blood Pressure Screening</option>
-  							<option>Brain Injuries</option>
-  							<option>Breastfeeding</option>
-  							<option>Business Assistance</option>
-  							<option>Cancer</option>
-  							<option>Cardio-Pulmonary Resuscitation</option>
-  							<option>Career Counseling</option>
-  							<option>Case Management</option>
-  							<option>Charities/Foundations/Funding Organizations</option>
-  							<option>Child Abuse Prevention</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="formInputCategory2">Category 2</label>
-              <select name="formInputCategory2" class="form-control" id="formInputCategory2">
-  							<option>N/A</option>
-  							<option>Adoption</option>
-  							<option>Aids</option>
-  							<option>Brain Injuries</option>
-  							<option>Children</option>
-  							<option>Counseling</option>
-  							<option>Developmental Disabilities</option>
-  							<option>Disability</option>
-  							<option>Domestic Violence</option>
-  							<option>Education</option>
-  							<option>Ex-offender Services</option>
-  							<option>Homeless People</option>
-  							<option>Homelessness</option>
-  							<option>Information And Referral</option>
-  							<option>Mental/emotional Disturbance</option>
-  							<option>Minority Groups</option>
-  							<option>Reporting/Emergency Response</option>
-  							<option>Senior Citizens</option>
-  							<option>Sexual</option>
-  							<option>Testing</option>
-  							<option>Treatment</option>
-  							<option>Veterans</option>
-  							<option>Women</option>
-  							<option>Youth</option>
-              </select>
-            </div>
-              
-            <div class="form-group">
-                <label for="formInputCompany">Company</label>
-                <input type="text" class="form-control" id="formInputCompany" name="formInputCompany" value="" placeholder="N/A">
-            </div>
-          </fieldset>
-            <button id="searchButton" type="submit" class="btn btn-primary btn-lg">Search</button>
-        </form>
-
-        {% if g.org_count is gt 0 %}
+          {% endfor %}
+        {% else %}
           <div id="searchResults">
-            <h1>{{ g.org_count }} results found</h1>
-            {% for org in g.orgs_list %}
-              <div class="resultModule">
-                <h4>{{ org.company }}</h4>
-                <table class="table table-sm table-light">
-                  <tbody class="resultTable">
-                    <tr>
-                      <th scope="row">Tags:</th>
-                      <td> {{ org.category1 }}{% if org.category2 != g.empty_str %}, {{ org.category2 }} {% endif %} </td>
-                    </tr>
-                    {% if org.phone != g.empty_str %}
-                    <tr>
-                      <th scope="row">Phone:</th>
-                      <td><a href="tel:{{ org.phone }}"> {{ org.phone }} </a></td>
-                    </tr>
-                    {% endif %}
-                    {% if org.address != g.empty_str %}
-                    <tr>
-                      <th scope="row">Address:</th>
-                      <td><a href="http://maps.google.com/?q={{ org.address }} {{ org.city }} {{ org.state }}">{{ org.address }} {{ org.city }} {{ org.state }}</a></td>
-                    </tr>
-                    {% endif %}
-                    <tr>
-                      <th scope="row">Website:</th>
-                      <td><a href="https://curlybrisketangels.com/search">feature-coming-soon.org</a></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Description:</th>
-                      <td>Descriptions for the companies will be easily integrated once they are entered into the database.</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-            {% endfor %}
-          {% else %}
-            <div id="searchResults">
-              <h1>No results found</h1>
-            </div>
-          {% endif %}
+            <h1>No results found</h1>
+          </div>
+        {% endif %}
 
 <!--
-        <nav class="searchResultsNav" aria-label="Page navigation example" onClick="document.getElementById('searchResults').scrollIntoView();">
-          <ul class="pagination justify-content-center">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-          </ul>
-        </nav>
+      <nav class="searchResultsNav" aria-label="Page navigation example" onClick="document.getElementById('searchResults').scrollIntoView();">
+        <ul class="pagination justify-content-center">
+          <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+          <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        </ul>
+      </nav>
 -->
-        
-    </body>
-    <footer>
-        <span>
-            <a class="navbar-brand" href="/">
-				<img class="logo-image" src="static/logo.png">
-				<span>Curlybrisket Angels</span>
-            </a>
-        </span>
-    </footer>
+      
+  </body>
+  <footer>
+    <!--Logo at the bottom of the page-->
+    <span>
+        <a class="navbar-brand" href="/">
+		<img class="logo-image" src="static/logo.png">
+		<span>Curlybrisket Angels</span>
+        </a>
+    </span>
+  </footer>
 
 <!--    <script src="../static/main.js"></script>-->
     
