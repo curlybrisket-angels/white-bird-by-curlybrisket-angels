@@ -11,4 +11,4 @@ function submitClick() {
 };
 
 
-searchButton.addEventListener("click", setTimeout(submitClick, 500));
+//searchButton.addEventListener("click", setTimeout(submitClick, 500));

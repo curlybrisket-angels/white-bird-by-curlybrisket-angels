@@ -28,7 +28,9 @@
             <h2>Please enter information about the service you are looking for:</h2>
         </div>  
 
-        <form method="POST" action="/search" id="search" name="search" onsubmit= "document.getElementById('searchResults').scrollIntoView();">
+        /*<form method="POST" action="/search" id="search" name="search" onsubmit= "document.getElementById('searchResults').scrollIntoView();">*/
+        <form method="POST" action="/search" id="search" name="search"> /*onsubmit= "submitClick"*/
+          
           <fieldset>
             <div class="form-group">
               <label for="formInputCity">City</label>
@@ -157,12 +159,14 @@
             </div>
           {% endif %}
 
+<!--
         <nav class="searchResultsNav" aria-label="Page navigation example" onClick="document.getElementById('searchResults').scrollIntoView();">
           <ul class="pagination justify-content-center">
             <li class="page-item"><a class="page-link" href="#">Previous</a></li>
             <li class="page-item"><a class="page-link" href="#">Next</a></li>
           </ul>
         </nav>
+-->
         
     </body>
     <footer>
