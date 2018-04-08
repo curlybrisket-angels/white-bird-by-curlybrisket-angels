@@ -94,12 +94,19 @@ def search():
 	for i in orgs_list:
 		print("i = " + str(i))
 		del i['_id']
-		del i['category1']
-		del i['category2']
 	orgs_list2 = []
+	flag = 0
 	for i in orgs_list:
-		if i not in orgs_list2:
-			orgs_list2.append(i)
+		for j in orgs_list2:
+			if i.get('company') == j.get('company'):
+				flag = 1
+				break
+		if flag == 1:
+			flag = 0
+			continue
+		orgs_list2.append(i)
+	empty_str = ''
+	flask.g.empty_str = empty_str
 	flask.g.orgs_list = orgs_list2
 	flask.g.org_count = len(orgs_list2)
 	print("orgslist = " + str(orgs_list2))

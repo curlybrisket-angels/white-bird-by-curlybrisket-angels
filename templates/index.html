@@ -28,7 +28,7 @@
             <h2>Please enter information about the service you are looking for:</h2>
         </div>  
 
-        <form method="POST" action="/search" id="search" name="search" onsubmit= "submitClick">
+        <form method="POST" action="/search" id="search" name="search" onsubmit= "document.getElementById('searchResults').scrollIntoView();">
           <fieldset>
             <div class="form-group">
               <label for="formInputCity">City</label>
@@ -127,6 +127,10 @@
                 <h4>{{ org.company }}</h4>
                 <table class="table table-sm table-light">
                   <tbody class="resultTable">
+                    <tr>
+                      <th scope="row">Tags:</th>
+                      <td> {{ org.category1 }}{% if org.category2 != g.empty_str %}, {{ org.category2 }} {% endif %} </td>
+                    </tr>
                     <tr>
                       <th scope="row">Phone:</th>
                       <td><a href="tel:{{ org.phone }}"> {{ org.phone }} </a></td>
