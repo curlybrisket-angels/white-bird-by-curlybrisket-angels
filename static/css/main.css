@@ -9,14 +9,15 @@ html {
 body {
     min-width: 520px;
     font-size: 1.5em;
-    font-family: Roboto, Helvetica, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 60px;
     background-color: lightblue;
     
 }
 
 a {
-    color: #2eccd1;
+/*    color: #2eccd1;*/
+    color: mediumblue;
 }
 
 #titleBlock {
@@ -24,6 +25,7 @@ a {
     vertical-align: middle;
     align-content: center;
     display: block;
+    margin-bottom: 40px;
 }
 
 #whiteBirdLogo {
@@ -32,6 +34,7 @@ a {
 }
 
 h1 {
+    font-weight: 900;
     padding: 10px;
     float: none;
     display: inline-flex;
@@ -141,7 +144,8 @@ footer {
     
     .form-control {
         text-align: left;
-        font-size: .7em;
+        font-size: .9em;
+        height: 120px !important;
         min-height: 100px
     }
     
