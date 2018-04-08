@@ -117,7 +117,7 @@
         </form>
         {% if g.org_count is gt 0 %}
           <div id="searchResults">
-            <h1>Results</h1>
+            <h1>{{ g.org_count }} results found</h1>
             {% for org in g.orgs_list %}
               <div class="resultModule">
                 <h4>{{ org.company }}</h4>
@@ -147,6 +147,11 @@
                 </table>
               </div>
             {% endfor %}
+          {% else %}
+            <div id="searchResults">
+              <h1>No results found</h1>
+            </div>
+          {% endif %}
 
         <nav class="searchResultsNav" aria-label="Page navigation example" onClick="document.getElementById('searchResults').scrollIntoView();">
           <ul class="pagination justify-content-center">
