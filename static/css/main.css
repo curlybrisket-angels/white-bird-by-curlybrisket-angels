@@ -1,10 +1,11 @@
-/*
-html {
-    min-width: 520px;
-    font-family: fantasy;
-    max-width: 1600px
-}
-*/
+/* --------------------------------------------------------
+Style Sheet for White Bird Resource Directory
+
+last modified: 08.04.2018 by Aiden Nelson
+author: Aiden Nelson
+email: Aidenjn@gmail.com
+website: Aidensfineart.com
+----------------------------------------------------------*/
 
 body {
     min-width: 520px;
@@ -12,14 +13,10 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     margin: 60px;
     background-color: lightblue;
-    
 }
-
 a {
-/*    color: #2eccd1;*/
     color: mediumblue;
 }
-
 #titleBlock {
     text-align: center;
     vertical-align: middle;
@@ -27,12 +24,10 @@ a {
     display: block;
     margin-bottom: 40px;
 }
-
 #whiteBirdLogo {
     width: 20%;
     display: inline-flex;
 }
-
 h1 {
     font-weight: 900;
     padding: 10px;
@@ -40,20 +35,16 @@ h1 {
     display: inline-flex;
     text-align: center;
 }
-
 h2 {
     margin: 40px 170px 60px 170px;
     display: block;
     text-align: center;
 }
-
 #search {
     margin: 0px 170px 0px 170px;
     margin-top: 15px;
     display: block;
-
 }
-
 #searchButton {
     text-align: center;
     width: 120px;
@@ -61,35 +52,17 @@ h2 {
     background-color: cadetblue
 }
 
-/*
-ul {
-    margin: 0;
-    padding: 0;
-    text-align: left;
-}
-
-li {
-    float: left;
-    list-style-type: none;
-}
-*/
-
+/*************** Styling for results section ***************/
 h4 {
     background-color: cadetblue;
     text-align: left;
     padding: 0px 0px 10px 0px;
-    
 }
-
 #searchResults {
-/*    margin: 0px 170px 0px 170px;*/
-/*    visibility: hidden;*/
-    /*display: none;*/
     font-size: 20px;
     text-align: left;
     margin-top: 110px;
 }
-
 .resultModule {
     border-radius: 10px;
     vertical-align: center;
@@ -97,77 +70,65 @@ h4 {
     background-color: cadetblue;
     margin: 0px 10px 15px 10px;
 }
-
 .resultTable {
     background-color: cadetblue;
 }
-
 th {
     width: 140px;
 }
- 
 .searchResultsNav {
     margin: 20px 0px 0px 0px;
     padding-bottom: 100px;
     text-align: center;
 }
-
 .logo-image {
 	height: 64px;
 }
-
 footer {
 	text-align: center;
 }
 
-/* Smartphones (portrait and landscape) ----------- */
+/*************** STYLING FOR MOBILE ***************/
+
 @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
     body {
         text-align: center;
         margin: 30px;
         font-size: 3em;
     }
-    
     h1 {
         font-size: 2em;
         text-align: center;
     }
-    
     h2 {
         margin: 0px 155px 0px 155px;
         font-size: 1em;
     }
-    
     #search {
         text-align: center;
         margin: 60px;
     }
-    
     .form-control {
         text-align: left;
         font-size: .9em;
         height: 120px !important;
         min-height: 100px
     }
-    
     #searchButton {
         margin-top: 40px;
         font-size: 1em;
         width: 320px;
         text-align: center;
     }
-    
     h4 {
         font-size: 1.2em;
         font-weight: bolder;
     }
-    
     #searchResults {
         font-size: .9em;
         text-align: left;
         margin-top: 110px;
     }
-
     .resultModule {
         border-radius: 10px;
         vertical-align: center;
@@ -175,7 +136,4 @@ footer {
         background-color: cadetblue;
         margin: 0px 10px 15px 10px;
     }
-    
-    
-    
 }
