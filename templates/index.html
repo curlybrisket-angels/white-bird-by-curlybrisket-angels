@@ -110,11 +110,13 @@
               
             <div class="form-group">
                 <label for="formInputCompany">Company</label>
-                <input type="text" class="form-control" id="formInputCompany" name="formInputCompany" value="N/A">
+                <input type="text" class="form-control" id="formInputCompany" name="formInputCompany" value="" placeholder="N/A">
             </div>
           </fieldset>
-          <button type="submit" value="Search" class="btn btn-primary btn-lg" id="searchButton" onClick="document.getElementById('searchResults').scrollIntoView();">Search</button>
+
+          <button id="searchButton" type="button" class="btn btn-primary btn-lg" onClick="setTimeout(submitClick, 500)">Search</button>
         </form>
+
         {% if g.org_count is gt 0 %}
           <div id="searchResults">
             <h1>{{ g.org_count }} results found</h1>
