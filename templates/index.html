@@ -11,11 +11,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-        <!--Custom css-->
-        <!-- <link rel="stylesheet" href="static/css/main.css" media="screen"> -->
-<!--
-        <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/main.css') }}" media="screen">
-        <link rel="stylesheet" href="../static/css/main.css" media="screen"> -->
         <link rel="stylesheet" href="{{ url_for('static', filename='../static/css/main.css') }}" media="screen">
         <link rel="stylesheet" href="../static/css/main.css" media="screen">
 
@@ -117,12 +112,13 @@
                 <label for="formInputCompany">Company</label>
                 <input type="text" class="form-control" id="formInputCompany" name="formInputCompany" value="N/A">
             </div>
-              
           </fieldset>
+
           <button id="searchButton" type="button" class="btn btn-primary btn-lg" onClick="setTimeout(submitClick, 500)">Search</button>
         </form>
 
-        <div id="searchResults" >
+        {% if g.org_count is gt 0 %}
+          <div id="searchResults">
             <h1>Results</h1>
             {% for org in g.orgs_list %}
               <div class="resultModule">
@@ -147,115 +143,18 @@
                     </tr>
                     <tr>
                       <th scope="row">Description:</th>
-                      <td>Descriptions for the companies will be easily integrated once they are put into the database.</td>
+                      <td>Descriptions for the companies will be easily integrated once they are entered into the database.</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
             {% endfor %}
-
-            <!--
-=======
-            
-          <button type="submit" value="Search" class="btn btn-primary btn-lg" id="searchButton" onClick="document.getElementById('searchResults').scrollIntoView();">Search</button> 
-        </form>
-
-        <div id="searchResults">
-            <h1 id="resultsTitle">Results</h1>
->>>>>>> fbfd0b8a418b4b84fb1f9f529558186658f62f69
-
-            <div class="resultModule">
-                <h4>Southwest Health Counseling</h4>
-                <table class="table table-sm table-light">
-                  <tbody class="resultTable">
-                    <tr>
-                      <th scope="row">Status:</th>
-                      <td>Inactive</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Phone:</th>
-                      <td>123 456 7890</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Address:</th>
-                      <td>4321 SW Curlybriskey Ave, Eugene OR</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Website:</th>
-                      <td><a href="https://curlybrisketangels.com/search">southwesthealthcounseling.org</a></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Description:</th>
-                      <td>Southwest Health Counseling focuses on the well-being of your children by providing free education services to families that have low-income. We wish to provide the best service that contributes to the betterment of our local communities healthiness.</td>
-                    </tr>
-                  </tbody>
-                </table>
+        {% else %}
+            <div id="searchResults">
+              <h1>No results found</h1>
             </div>
-            <div class="resultModule">
-                <h4>Southwest Health Counseling</h4>
-                <table class="table table-sm table-light">
-                  <tbody class="resultTable">
-                    <tr>
-                      <th scope="row">Status:</th>
-                      <td>Inactive</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Phone:</th>
-                      <td>123 456 7890</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Address:</th>
-                      <td>4321 SW Curlybriskey Ave, Eugene OR</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Website:</th>
-                      <td><a href="https://curlybrisketangels.com/search">southwesthealthcounseling.org</a></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Description:</th>
-                      <td>Southwest Health Counseling focuses on the well-being of your children by providing free education services to families that have low-income. We wish to provide the best service that contributes to the betterment of our local communities healthiness.</td>
-                    </tr>
-                  </tbody>
-                </table>
-            </div>
-            <div class="resultModule">
-                <h4>Southwest Health Counseling</h4>
-                <table class="table table-sm table-light">
-                  <tbody class="resultTable">
-                    <tr>
-                      <th scope="row">Status:</th>
-                      <td>Inactive</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Phone:</th>
-                      <td>123 456 7890</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Address:</th>
-                      <td>4321 SW Curlybriskey Ave, Eugene OR</td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Website:</th>
-                      <td><a href="https://curlybrisketangels.com/search">southwesthealthcounseling.org</a></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">Description:</th>
-                      <td>Southwest Health Counseling focuses on the well-being of your children by providing free education services to families that have low-income. We wish to provide the best service that contributes to the betterment of our local communities healthiness.</td>
-                    </tr>
-                  </tbody>
-                </table>
-            </div>
-        </div>
-</body>
-      -->
+        {% endif %}
 
-    
-<!--
-    <div id="searchResultsNav">
-        <a href="#" onClick="document.getElementById('searchResults').scrollIntoView();">prev</a>
-        <a href="#" onClick="document.getElementById('searchResults').scrollIntoView();">next</a>
-     </div>
--->
         <nav class="searchResultsNav" aria-label="Page navigation example" onClick="document.getElementById('searchResults').scrollIntoView();">
           <ul class="pagination justify-content-center">
             <li class="page-item"><a class="page-link" href="#">Previous</a></li>

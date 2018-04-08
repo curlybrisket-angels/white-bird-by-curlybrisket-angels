@@ -28,14 +28,13 @@ company = "yes"
 
 class CreateDictionary:
 
-   def __init__(self, category1=None, category2=None, state=None, city=None, company=None):
+   def __init__(self, category1=None, category2=None, city=None, company=None):
        self.found = 0 #Switch to 1 if result is found
        self.cat1 = category1
        self.cat2 = category2
-       self.state = state
        self.city = city
        self.company = company
-       self.current_dict = {"category1": self.cat1, "category2": self.cat2, "state": self.state,
+       self.current_dict = {"category1": self.cat1, "category2": self.cat2, 
                             "city": self.city, "company": self.company}
 
    def __repr__(self):
@@ -67,7 +66,7 @@ test = createdict.get_dictionary()
 print(test)
 """
 @app.route("/")
-@app.route("/search", methods=['GET', 'POST'])
+@app.route("/search", methods=['POST'])
 def search():
 	"""
 	The default page which is a search page that allows the client to send various amounts of information 
@@ -86,7 +85,7 @@ def search():
 	print("state = " + str(state))
 	city = flask.request.form.get("formInputCity")
 	company = flask.request.form.get("formInputCompany")
-	diction = CreateDictionary(category1, category2, state, city, company)
+	diction = CreateDictionary(category1, category2, city, company)
 	diction.update_dictionary()
 	orgs_list = []
 	print("diction = " + str(diction.get_dictionary))
@@ -96,23 +95,8 @@ def search():
 		del i['_id']
 		del i['category1']
 		del i['category2']
-		#i['google_link'] = (format_address(i['address'], i['city'], i['state']))
 	flask.g.orgs_list = orgs_list
+	flask.g.org_count = len(orgs_list)
 	print("orgslist = " + str(orgs_list))
 	return flask.render_template("index.html")
-
-def format_address(addr, city, state):
-	"""
-	Takes a string that is an address and formats it into a google maps link for use on the webpage.
-	"""
-	pass
-	final_str = "https://www.google.com/maps/dir/?api=1&query="
-	final_str += addr.replace(" ", "+")
-	final_str += "%"
-	final_str += city.replace(" ", "+")
-	final_str += "%"
-	final_str += state.replace(" ", "+")
-	print("formatted address = " + final_str)
-	return final_str
-
 
