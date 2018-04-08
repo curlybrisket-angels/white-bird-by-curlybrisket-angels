@@ -114,7 +114,8 @@
             </div>
           </fieldset>
 
-          <button id="searchButton" type="button" class="btn btn-primary btn-lg" onClick="setTimeout(submitClick, 500)">Search</button>
+          <button id="searchButton" onClick="setTimeout(submitClick, 500)" type="submit" class="btn btn-primary btn-lg">Search</button>
+          <!--<button id="searchButton"  type="submit" class="btn btn-primary btn-lg" onClick="document.getElementById('searchResults').scrollIntoView();">Search</button>-->
         </form>
 
         {% if g.org_count is gt 0 %}
@@ -125,10 +126,6 @@
                 <h4>{{ org.company }}</h4>
                 <table class="table table-sm table-light">
                   <tbody class="resultTable">
-                    <tr>
-                      <th scope="row">Status:</th>
-                      <td>{{ org.status }}</td>
-                    </tr>
                     <tr>
                       <th scope="row">Phone:</th>
                       <td><a href="tel:{{ org.phone }}"> {{ org.phone }} </a></td>

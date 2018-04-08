@@ -92,11 +92,16 @@ def search():
 	for i in orgs.find(diction.get_dictionary()):
 		orgs_list.append(i)
 	for i in orgs_list:
+		print("i = " + str(i))
 		del i['_id']
 		del i['category1']
 		del i['category2']
-	flask.g.orgs_list = orgs_list
-	flask.g.org_count = len(orgs_list)
-	print("orgslist = " + str(orgs_list))
+	orgs_list2 = []
+	for i in orgs_list:
+		if i not in orgs_list2:
+			orgs_list2.append(i)
+	flask.g.orgs_list = orgs_list2
+	flask.g.org_count = len(orgs_list2)
+	print("orgslist = " + str(orgs_list2))
 	return flask.render_template("index.html")
 
