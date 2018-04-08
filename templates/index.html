@@ -28,8 +28,7 @@
             <h2>Please enter information about the service you are looking for:</h2>
         </div>  
 
-        /*<form method="POST" action="/search" id="search" name="search" onsubmit= "document.getElementById('searchResults').scrollIntoView();">*/
-        <form method="POST" action="/search" id="search" name="search"> /*onsubmit= "submitClick"*/
+        <form method="POST" action="/search" id="search" name="search">
           
           <fieldset>
             <div class="form-group">
@@ -118,7 +117,6 @@
             </div>
           </fieldset>
             <button id="searchButton" type="submit" class="btn btn-primary btn-lg">Search</button>
-          <!--<button id="searchButton"  type="submit" class="btn btn-primary btn-lg" onClick="document.getElementById('searchResults').scrollIntoView();">Search</button>-->
         </form>
 
         {% if g.org_count is gt 0 %}
@@ -133,14 +131,18 @@
                       <th scope="row">Tags:</th>
                       <td> {{ org.category1 }}{% if org.category2 != g.empty_str %}, {{ org.category2 }} {% endif %} </td>
                     </tr>
+                    {% if org.phone != g.empty_str %}
                     <tr>
                       <th scope="row">Phone:</th>
                       <td><a href="tel:{{ org.phone }}"> {{ org.phone }} </a></td>
                     </tr>
+                    {% endif %}
+                    {% if org.address != g.empty_str %}
                     <tr>
                       <th scope="row">Address:</th>
                       <td><a href="http://maps.google.com/?q={{ org.address }} {{ org.city }} {{ org.state }}">{{ org.address }} {{ org.city }} {{ org.state }}</a></td>
                     </tr>
+                    {% endif %}
                     <tr>
                       <th scope="row">Website:</th>
                       <td><a href="https://curlybrisketangels.com/search">feature-coming-soon.org</a></td>
