@@ -4,6 +4,8 @@
     <head>
         <meta charset="utf-8">
         <title>White Bird challenge</title>
+        <!--Favicon-->
+        <link rel="icon" href="http://whitebirdclinic.org/wp-content/uploads/2017/11/wbc-clr.png">
 
         <!--Bootstrap files-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -26,7 +28,7 @@
             <h2>Please enter information about the service you are looking for:</h2>
         </div>  
 
-        <form method="POST" action="/search" id="search" name="search">
+        <form method="POST" action="/search" id="search" name="search" onsubmit= "submitClick">
           <fieldset>
             <div class="form-group">
               <label for="formInputCity">City</label>
@@ -113,8 +115,7 @@
                 <input type="text" class="form-control" id="formInputCompany" name="formInputCompany" value="" placeholder="N/A">
             </div>
           </fieldset>
-
-          <button id="searchButton" onClick="setTimeout(submitClick, 500)" type="submit" class="btn btn-primary btn-lg">Search</button>
+            <button id="searchButton" type="submit" class="btn btn-primary btn-lg">Search</button>
           <!--<button id="searchButton"  type="submit" class="btn btn-primary btn-lg" onClick="document.getElementById('searchResults').scrollIntoView();">Search</button>-->
         </form>
 
@@ -169,6 +170,6 @@
         </span>
     </footer>
 
-    <script src="../static/main.js"></script>
+<!--    <script src="../static/main.js"></script>-->
     
 </html>

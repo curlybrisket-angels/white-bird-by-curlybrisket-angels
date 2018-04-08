@@ -5,14 +5,10 @@ var category1 = document.getElementById('formInputCategory1');
 
 
 function submitClick() {
+    alert("yodel")
     document.getElementById('searchResults').style.display = "block";
     document.getElementById('searchResults').scrollIntoView();
 };
 
-function changeColor() {
-    //titleBlock.style.backgroundColor = "red";
-};
 
-
-//changeColor();
-//titleBlock.addEventListener('click', changeColor);
+searchButton.addEventListener("click", setTimeout(submitClick, 500));
