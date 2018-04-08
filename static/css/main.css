@@ -82,6 +82,7 @@ h4 {
 }
 
 #searchResults {
+/*    margin: 0px 170px 0px 170px;*/
 /*    visibility: hidden;*/
     /*display: none;*/
     font-size: 20px;
